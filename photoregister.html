@@ -1,32 +1,112 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Menu</title>
-    <script src="./js/jsbn.js"></script>
-    <script src="./js/jsbn2.js"></script>
-    <script src="./js/sjcl.js"></script>
-    <script src="./js/aws-sdk.min.js"></script>
-    <script src="./js/aws-cognito-sdk.min.js"></script>
-    <script src="./js/amazon-cognito-identity.min.js"></script>
+    <meta charset="UTF-8">
+    <!--    jquery のライブラリ は固定ではない-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <title>Title</title>
+    <style>
+        label > input {
+            display:none; /* ファイルボタンのスタイルを無効にする */
+        }
+        label > button {
+            display:none; /* ボタンのスタイルを無効にする */
+        }
+
+        label {
+            display: inline-block;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            background: #fd9535;/*ボタン色*/
+            color: #FFF;
+            border-bottom: solid 4px #627295;
+            border-radius: 3px;
+        }
+        button{
+            display: inline-block;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            background: #fd9535;/*ボタン色*/
+            color: #FFF;
+            border-bottom: solid 4px #627295;
+            border-radius: 3px;
+        }
+        label:active {
+            /*ボタンを押したとき*/
+            -webkit-transform: translateY(4px);
+            transform: translateY(4px);/*下に動く*/
+            border-bottom: none;/*線を消す*/
+        }
+        button:active{
+            /*ボタンを押したとき*/
+            -webkit-transform: translateY(4px);
+            transform: translateY(4px);/*下に動く*/
+            border-bottom: none;/*線を消す*/
+        }
+    </style>
 </head>
-
 <body>
-    <!-- ファイル選択ボタン -->
-    <div style="width: 500px">
-        <form enctype="multipart/form-data" method="post">
-            <input type="file" name="userfile" accept="image/*">
-        </form>
-    </div>
+<form action="https://phbtcgleb6.execute-api.ap-northeast-1.amazonaws.com/default/savepicture" method="post" enctype="multipart/form-data" id="imgForm"  target="sendPhoto">
+    <p>
+        <label for ="upfile">
+            ファイルを選択してください
+            <input type="file" name="fileName" id="upfile" accept="image/*" capture="camera">
+        </label>
+        <span style="color: #ff0000;" data-mce-style="color: #ff0000;"><div><img id="thumbnail" src=""></div></span>
+    </p>
+    <p>
+        <label for="upload">
+            アップロード
+            <button type="submit" action="" name="save" id="upload" >upload</button>
+        </label>
+    </p>
+    <p id="compUpload"></p>
+</form>
+<iframe name="sendPhoto" style="width:0px;height:0px;border:0px;"></iframe>
+<script>
+$('#upfile').change(function(){
+if (this.files.length > 0) {
+// 選択されたファイル情報を取得
+var file = this.files[0];
+// readerのresultプロパティに、データURLとしてエンコードされたファイルデータを格納
+var reader = new FileReader();
+reader.readAsDataURL(file);
+reader.onload = function() {
+$('#thumbnail').attr('src', reader.result );
+}
+}
+});
 
-    <!-- サムネイル表示領域 -->
-    <canvas id="canvas" width="0" height="0"></canvas>
+// 画像をアップロード
+    $('#imgForm').on('submit', function(e) {
+        e.preventDefault();
+        var formData = new FormData($('#imgForm').get(0));
+        $.ajax($(this).attr('action'), {
+            type: 'post',
+            processData: false,
+            contentType: false,
+            data: formData,
+            success: document.getElementById('compUpload').innerHTML = 'アップロード中' // 送信に成功したとき
 
-    <!-- アップロード開始ボタン -->
-    <button class="btn btn-primary" id="upload">投稿</button>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="./js/photoregister.js" defer></script>
+    }).done(function(response){
+        let jsonbody = JSON.parse(response.body);
+            console.log('succes!');  // レスポンスがあったとき
+            //ローカルストレージにレスポンスのファイル名を格納
+            var array = [];
+            var obj = {
+                'キー1': '値1',
+                'キー2': '値2'
+            };
+            array.push(obj);
+            var setjson = JSON.stringify(obj);
+            localStorage.setItem('キー', jsonbody.message);
+            document.getElementById('compUpload').innerHTML = 'アップロード完了'
+
+    }).fail(function() {
+            console.log('error!'); // エラーが発生したとき
+        });
+        return false;
+    });
+</script>
 </body>
-
 </html>
