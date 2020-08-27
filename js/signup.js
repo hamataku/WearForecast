@@ -37,7 +37,7 @@
       Value: name
     };
     const dataRole = {
-      Name: "custom:role",
+      Name: "custom:custom:role",
       Value: "5"
     };
     const attributeName = new AmazonCognitoIdentity.CognitoUserAttribute(
