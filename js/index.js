@@ -36,7 +36,7 @@
           document.getElementById("name").innerHTML =
             "ようこそ！" + currentUserData["name"] + "さん";
           document.getElementById("role").innerHTML =
-            "Your Role is " + currentUserData["custom:role"];
+            "Your Role is " + currentUserData["custom:custom:role"];
           document.getElementById("email").innerHTML =
             "Your E-Mail is " + currentUserData["email"];
 
