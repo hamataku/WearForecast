@@ -5,7 +5,13 @@
     <meta charset="UTF-8">
     <!--    jquery のライブラリ は固定ではない-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <title>Title</title>
+    <script src="./js/jsbn.js"></script>
+    <script src="./js/jsbn2.js"></script>
+    <script src="./js/sjcl.js"></script>
+    <script src="./js/aws-sdk.min.js"></script>
+    <script src="./js/aws-cognito-sdk.min.js"></script>
+    <script src="./js/amazon-cognito-identity.min.js"></script>
+    <title>写真登録</title>
     <style>
         label>input {
             display: none;
@@ -74,6 +80,16 @@
         </label>
             <span style="color: #ff0000;" data-mce-style="color: #ff0000;"><div><img id="thumbnail" src=""></div></span>
         </p>
+        <hr>
+        <p>1 冬服　<----> 5 夏服</p>
+
+        <input type="radio" name="example" value="1" checked>1
+        <input type="radio" name="example" value="2">2
+        <input type="radio" name="example" value="3">3
+        <input type="radio" name="example" value="4">4
+        <input type="radio" name="example" value="5">5
+
+        <hr>
         <p>
             <label for="upload">
             アップロード
@@ -83,7 +99,8 @@
         <p id="compUpload"></p>
     </form>
     <iframe name="sendPhoto" style="width:0px;height:0px;border:0px;"></iframe>
-    <script src="./js/photoregister.js" defer></script>
+    <script src="./js/md5.js" defer></script>
+    <script src="js/photoreg.js" defer></script>
 </body>
 
 </html>

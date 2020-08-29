@@ -1,4 +1,5 @@
 let count = 0;
+let hash = "";
 $('#upfile').change(function() {
   if (this.files.length > 0) {
     // 選択されたファイル情報を取得
@@ -14,13 +15,22 @@ $('#upfile').change(function() {
 
 // 画像をアップロード
 $('#imgForm').on('submit', function(e) {
-  
-  user = "Hello";
+
+  // 要素を取得
+  var elements = document.getElementsByName( "example" ) ;
+
+// 選択状態の値を取得
+  for ( var a="", i=elements.length; i--; ) {
+    if ( elements[i].checked ) {
+      var a = elements[i].value ;
+      break ;
+    }
+  }
+
   $('#upfile').attr({
-    'name': user+"/"+count
+    'name': hash+"/"+count+"-"+a
   });
   count++;
-
   e.preventDefault();
   var formData = new FormData($('#imgForm').get(0));
   
@@ -42,7 +52,7 @@ $('#imgForm').on('submit', function(e) {
     };
     array.push(obj);
     var setjson = JSON.stringify(obj);
-    localStorage.setItem('キー', jsonbody.message);
+    localStorage.setItem('キー', count);
     document.getElementById('compUpload').innerHTML = 'アップロード完了しました。写真に写っているのは'+jsonbody.message+'です。'
 
   }).fail(function() {
@@ -52,6 +62,11 @@ $('#imgForm').on('submit', function(e) {
 });
 
 (() => {
+  count = localStorage.getItem("キー");
+  if (count == null) {
+    count = "0";
+    localStorage.setItem("キー", "0");
+  }
   // ユーザープールの設定
   const poolData = {
     UserPoolId: "ap-northeast-1_bX1jgrpZQ",
@@ -67,6 +82,8 @@ $('#imgForm').on('submit', function(e) {
   AWS.config.credentials = new AWS.CognitoIdentityCredentials({
     IdentityPoolId: "ap-northeast-1:1d64aa86-ba4d-4ce0-9b8d-a8977e8bc43e"
   });
+
+
 
   // 現在のユーザーの属性情報を取得・表示する
   // 現在のユーザー情報が取得できているか？
@@ -92,6 +109,8 @@ $('#imgForm').on('submit', function(e) {
             "Your Role is " + currentUserData["custom:custom:role"];
           document.getElementById("email").innerHTML =
             "Your E-Mail is " + currentUserData["email"];
+
+          hash = CybozuLabs.MD5.calc(currentUserData["email"]);
 
           // サインアウト処理
           const signoutButton = document.getElementById("signout");
