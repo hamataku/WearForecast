@@ -5,7 +5,9 @@
   <meta charset="UTF-8" />
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet">
   <title>Sign Up</title>
   <script src="./js/jsbn.js"></script>
   <script src="./js/jsbn2.js"></script>
@@ -16,38 +18,91 @@
 </head>
 
 <body>
-  <div id="signup">
-    <h1 class = "text-center mx-3">Sign Up</h1>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand goodfont" href="#">WEAR Forecast</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link goodfont" href="#">>>Mypage<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link goodfont" href="#">>>About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<main>
+  <div id="signup" class="container wrapper">
+    <h1 class = "text-center form-signin-heading">Sign Up</h1>
+    <hr class="colorgraph"><br>
     <div id="message"><span id="message-span" style="color: red;"></span></div>
-    <form name="form-signup" class = "text-center">
-      <span style="display: inline-block; width: 150px;">User ID(Email)</span>
+    <div class = "form-group">
+      <form name="form-signup" class = "text-center form-signin">
+      <span style="display: inline-block; width: 150px;" >Email Address</span>
       <input type="text" id="email" placeholder="Email Address" />
       <br />
-      <span style="display: inline-block; width: 150px;">Name</span>
+      <span style="display: inline-block; width: 150px;" >Name</span>
       <input type="text" id="name" placeholder="Name" />
       <br />
-      <span style="display: inline-block; width: 150px;">Password</span>
+      <span style="display: inline-block; width: 150px;" >Password</span>
       <input type="password" id="password" placeholder="Password" />
       <br /><br />
       <div class = "text-center">
-        <input type="button" id="createAccount" value="Create Account" />
+        <input type="button" id="createAccount" value="Create Account" class = "btn btn-primary"/>
       </div>  
-    </form>
+      </form>
+    </div>  
   </div>
-  <br />
+  <br/>
   <div class="container">
     <div class="row">
       <div class="mx-auto">
-        <a href="./signin.html" class="btn btn-primary btn-lg">Sign In!</a>
+        <a href="./signin.html" class="btn btn-primary btn-lg mb-5">Sign In!</a>
       </div>
     </div>
   </div>
+</main>
+<footer>
+  <section id="footer">
+		<div class="container">
+			<div class="row text-center text-xs-center text-sm-left text-md-left">
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<h5 class = "goodfont">Quick links</h5>
+					<ul class="list-unstyled quick-links">
+						<li class="goodfont"><a href="">>>MyPage</a></li>
+						<li class="goodfont"><a href="">>>About</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+					<ul class="list-unstyled list-inline social text-center">
+						<li class="list-inline-item"><a href=""><i class="fa fa-facebook"></i></a></li>
+						<li class="list-inline-item"><a href=""><i class="fa fa-twitter"></i></a></li>
+						<li class="list-inline-item"><a href=""><i class="fa fa-instagram"></i></a></li>
+						<li class="list-inline-item"><a href=""><i class="fa fa-google-plus"></i></a></li>
+						<li class="list-inline-item"><a href="" target="_blank"><i class="fa fa-envelope"></i></a></li>
+					</ul>
+				</div>
+				<hr>
+			</div>	
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+					<p><u><a href=""></a></u></p>
+					<p class="h6"><a class="text-green ml-2" href="" target="_blank"></a></p>
+				</div>
+				<hr>
+			</div>	
+		</div>
+	</section>
+</footer>
   
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
   <script src="./js/signup.js" defer></script>
 </body>
-
 </html>

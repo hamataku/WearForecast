@@ -5,13 +5,19 @@
     ClientId: "63ubgk2st9c0r6m7h49hb77q2c"
   };
   const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-
+  const cognitoUser = userPool.getCurrentUser(); // 現在のユーザー
 
   // Amazon Cognito 認証情報プロバイダーを初期化します
   AWS.config.region = "ap-northeast-1"; // リージョン
   AWS.config.credentials = new AWS.CognitoIdentityCredentials({
     IdentityPoolId: "ap-northeast-1:1d64aa86-ba4d-4ce0-9b8d-a8977e8bc43e"
   });
+  
+  // 現在のユーザーの属性情報を取得・表示する
+  // 現在のユーザー情報が取得できているか？
+  if (cognitoUser != null) {
+    location.href = "index.html";
+  }
 
   /**
    * サインイン処理

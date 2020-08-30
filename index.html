@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <title>Menu</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet">
     <script src="./js/jsbn.js"></script>
     <script src="./js/jsbn2.js"></script>
     <script src="./js/sjcl.js"></script>
@@ -11,16 +14,47 @@
     <script src="./js/amazon-cognito-identity.min.js"></script>
   </head>
   <body>
-    <div id="menu">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:#e3f2fd;">
+    <a class="navbar-brand goodfont" href="#">WEAR Forecast</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link goodfont" href="#">MyPage<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link goodfont" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link goodfont" href="#" id="signout">SignOut</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+    <hr class="colorgraph"><br>
+    <div id="menu" class="text-center">
       <h1 id="name"></h1>
       <h2 id="role"></h2>
       <p id="email"></p>
     </div>
-    <p>
-    <a href="./photoreg.html">服の写真を登録!</a>
-    <a href="./forecast.html">5日間の服装予報</a>
+    <p class="text-center">
+    <a href="./photoreg.html" class="btn btn-primary btn-lg">服の写真を登録!</a>
+    <a href="./forecast.html" class="btn btn-primary btn-lg">5日間の服装予報</a>
     </p>
-    <button id="signout" hidden>Sign Out</button>
+    <div class="container">
+      <div class="row">
+        <div class="mx-auto">
+          <button id="signout" class="btn btn-secondary" hidden>Sign Out</button>
+        </div>
+      </div>
+    </div>
+    
     <script src="./js/index.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
