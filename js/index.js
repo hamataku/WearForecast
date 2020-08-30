@@ -34,11 +34,11 @@
             currentUserData[result[i].getName()] = result[i].getValue();
           }
           document.getElementById("name").innerHTML =
-            "ようこそ！" + currentUserData["name"] + "さん";
+              "ようこそ！" + currentUserData["name"] + "さん";
           document.getElementById("role").innerHTML =
-            "Your Role is " + currentUserData["custom:custom:role"];
+              "Your Role is " + currentUserData["custom:custom:role"];
           document.getElementById("email").innerHTML =
-            "Your E-Mail is " + currentUserData["email"];
+              "Your E-Mail is " + currentUserData["email"];
 
           // サインアウト処理
           const signoutButton = document.getElementById("signout");

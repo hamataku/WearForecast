@@ -20,11 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ce3a7b3-5612-4b4d-a8af-861f961c483d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/js/md5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forecast.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/forecast.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/photoregister.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/photoreg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photoregister.html" beforeDir="false" afterPath="$PROJECT_DIR$/photoreg.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/signin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/photoreg.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/photoreg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photoreg.html" beforeDir="false" afterPath="$PROJECT_DIR$/photoreg.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +46,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -52,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598721410557</updated>
-      <workItem from="1598721412314" duration="3150000" />
+      <workItem from="1598721412314" duration="8224000" />
     </task>
     <servers />
   </component>

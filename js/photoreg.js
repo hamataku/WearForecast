@@ -1,67 +1,7 @@
 let count = 0;
 let hash = "";
-$('#upfile').change(function() {
-  if (this.files.length > 0) {
-    // 選択されたファイル情報を取得
-    var file = this.files[0];
-    // readerのresultプロパティに、データURLとしてエンコードされたファイルデータを格納
-    var reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = function() {
-      $('#thumbnail').attr('src', reader.result);
-    }
-  }
-});
-
-// 画像をアップロード
-$('#imgForm').on('submit', function(e) {
-
-  // 要素を取得
-  var elements = document.getElementsByName( "example" ) ;
-
-// 選択状態の値を取得
-  for ( var a="", i=elements.length; i--; ) {
-    if ( elements[i].checked ) {
-      var a = elements[i].value ;
-      break ;
-    }
-  }
-
-  $('#upfile').attr({
-    'name': hash+"/"+count+"-"+a
-  });
-  count++;
-  e.preventDefault();
-  var formData = new FormData($('#imgForm').get(0));
-  
-  $.ajax($(this).attr('action'), {
-    type: 'post',
-    processData: false,
-    contentType: false,
-    data: formData,
-    success: document.getElementById('compUpload').innerHTML = 'アップロード中' // 送信に成功したとき
-
-  }).done(function(response) {
-    let jsonbody = JSON.parse(response.body);
-    console.log('succes!'); // レスポンスがあったとき
-    //ローカルストレージにレスポンスのファイル名を格納
-    var array = [];
-    var obj = {
-      'キー1': '値1',
-      'キー2': '値2'
-    };
-    array.push(obj);
-    var setjson = JSON.stringify(obj);
-    localStorage.setItem('キー', count);
-    document.getElementById('compUpload').innerHTML = 'アップロード完了しました。写真に写っているのは'+jsonbody.message+'です。'
-
-  }).fail(function() {
-    console.log('error!'); // エラーが発生したとき
-  });
-  return false;
-});
-
 (() => {
+  $('#upbutton').hide();
   count = localStorage.getItem("キー");
   if (count == null) {
     count = "0";
@@ -104,11 +44,11 @@ $('#imgForm').on('submit', function(e) {
             currentUserData[result[i].getName()] = result[i].getValue();
           }
           document.getElementById("name").innerHTML =
-            "ようこそ！" + currentUserData["name"] + "さん";
+              "ようこそ！" + currentUserData["name"] + "さん";
           document.getElementById("role").innerHTML =
-            "Your Role is " + currentUserData["custom:custom:role"];
+              "Your Role is " + currentUserData["custom:custom:role"];
           document.getElementById("email").innerHTML =
-            "Your E-Mail is " + currentUserData["email"];
+              "Your E-Mail is " + currentUserData["email"];
 
           hash = CybozuLabs.MD5.calc(currentUserData["email"]);
 
@@ -126,4 +66,70 @@ $('#imgForm').on('submit', function(e) {
   } else {
     location.href = "signin.html";
   }
+
 })();
+
+$('#upfile').change(function() {
+
+  if (this.files.length > 0) {
+    // 選択されたファイル情報を取得
+    var file = this.files[0];
+    // readerのresultプロパティに、データURLとしてエンコードされたファイルデータを格納
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function() {
+      $('#thumbnail').attr('src', reader.result);
+    }
+    $('#upbutton').show();
+  }
+});
+
+// 画像をアップロード
+$('#imgForm').on('submit', function(e) {
+  $('#upbutton').hide();
+  // 要素を取得
+  var elements = document.getElementsByName( "example" ) ;
+
+// 選択状態の値を取得
+  for ( var a="", i=elements.length; i--; ) {
+    if ( elements[i].checked ) {
+      var a = elements[i].value ;
+      break ;
+    }
+  }
+
+  $('#upfile').attr({
+    'name': hash+"/"+count+"-"+a
+  });
+  count++;
+  e.preventDefault();
+  var formData = new FormData($('#imgForm').get(0));
+  console.log($('#imgForm').get(0));
+  
+  $.ajax($(this).attr('action'), {
+    type: 'post',
+    processData: false,
+    contentType: false,
+    data: formData,
+    success: document.getElementById('compUpload').innerHTML = 'アップロード中' // 送信に成功したとき
+
+  }).done(function(response) {
+    let jsonbody = JSON.parse(response.body);
+    console.log('succes!'); // レスポンスがあったとき
+    //ローカルストレージにレスポンスのファイル名を格納
+    var array = [];
+    var obj = {
+      'キー1': '値1',
+      'キー2': '値2'
+    };
+    array.push(obj);
+    var setjson = JSON.stringify(obj);
+    localStorage.setItem('キー', count);
+    document.getElementById('compUpload').innerHTML = 'アップロード完了しました。写真に写っているのは'+jsonbody.message+'です。'
+
+  }).fail(function() {
+    console.log('error!'); // エラーが発生したとき
+  });
+  return false;
+});
+
