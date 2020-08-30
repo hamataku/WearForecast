@@ -5,11 +5,14 @@ body {
   background-image: url("../image/background2.jpg");
   background-size: cover;
   background-attachment: fixed;
-  opacity: 0.9;
 }
 
 main {
     text-align: center;
+}
+
+.navbar, footer, .title{
+    opacity: 0.9;
 }
 
 nav li{
@@ -22,22 +25,6 @@ nav li:hover{
 	padding: 3px 0;
 	margin-left:5px;
 	font-weight:700;
-}
-
-.colorgraph {
-  height: 7px;
-  border-top: 0;
-  background: #c4e17f;
-  border-radius: 5px;
-  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-}
-
-.wrapper {    
-	margin-top: 40px;
-	margin-bottom: 20px;
 }
 
 .form-signin {
@@ -64,8 +51,8 @@ nav li:hover{
 }
 
 .horizontal_scroll_wrap{
-    background: #f1f1f1;
-    height: 1000px;
+    background: rgba(241,241,241,0.9);
+    padding-bottom: 50px;
     overflow-y: hidden;
     margin: 20px auto;
     width:90%;
@@ -76,8 +63,10 @@ nav li:hover{
     overflow-y: hidden;
     white-space: nowrap;
     padding-top: 10px;
+    padding-bottom: 50px;
     margin: 25px auto;
     -webkit-overflow-scrolling: touch;
+    opacity: 1.0;
 }
 .scroll_item {
     margin-right: 10%;
@@ -110,11 +99,13 @@ nav li:hover{
 
 .weather-info {
     text-align: left;
+    margin-top: 10px;
 }
 
 .weather-image {
     width: 60px;
     height: 60px;
+    margin-left: 10px;
 }
 
 .temperature {

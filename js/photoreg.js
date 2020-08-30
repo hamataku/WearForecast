@@ -6,10 +6,11 @@ $(function () {
     $('#upbutton1').hide();
     $('#upbutton2').hide();
     $('#recognition').hide();
-    count = localStorage.getItem("キー");
-    if (count == null) {
+    if(typeof(localStorage.getItem("count")) != undefined){
         count = "0";
         localStorage.setItem("キー", "0");
+    }else{
+        count = localStorage.getItem("キー");
     }
     // ユーザープールの設定
     const poolData = {
@@ -234,3 +235,4 @@ function actionC() { //Bボタン
         console.log('error!'); // エラーが発生したとき
     });
 }
+

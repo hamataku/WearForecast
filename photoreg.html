@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <!--    jquery のライブラリ は固定ではない-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./js/jsbn.js"></script>
     <script src="./js/jsbn2.js"></script>
@@ -12,67 +15,37 @@
     <script src="./js/aws-cognito-sdk.min.js"></script>
     <script src="./js/amazon-cognito-identity.min.js"></script>
     <title>写真登録</title>
-    <style>
-        label>input {
-            display: none;
-            /* ファイルボタンのスタイルを無効にする */
-        }
-        label>button {
-            display: none;
-            /* ボタンのスタイルを無効にする */
-        }
-        label {
-            display: inline-block;
-            padding: 0.5em 1em;
-            text-decoration: none;
-            background: #fd9535;
-            /*ボタン色*/
-            color: #FFF;
-            border-bottom: solid 4px #627295;
-            border-radius: 3px;
-        }
-        button {
-            display: inline-block;
-            padding: 0.5em 1em;
-            text-decoration: none;
-            background: #fd9535;
-            /*ボタン色*/
-            color: #FFF;
-            border-bottom: solid 4px #627295;
-            border-radius: 3px;
-        }
-
-        label:active {
-            /*ボタンを押したとき*/
-            -webkit-transform: translateY(4px);
-            transform: translateY(4px);
-            /*下に動く*/
-            border-bottom: none;
-            /*線を消す*/
-        }
-
-        button:active {
-            /*ボタンを押したとき*/
-            -webkit-transform: translateY(4px);
-            transform: translateY(4px);
-            /*下に動く*/
-            border-bottom: none;
-            /*線を消す*/
-        }
-    </style>
 </head>
 <body>
-    <div id="menu">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand goodfont" href="./index.html">WEAR Forecast</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link goodfont" href="#">>>MyPage</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link goodfont" href="#">>>About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link goodfont" href="#" id="signout">>>SignOut</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+    <div id="menu" class="text-center mt-4">
         <h1 id="name"></h1>
         <h2 id="role"></h2>
         <p id="email"></p>
     </div>
-    <button id="signout" hidden>Sign Out</button>
     <form name="myform" action="https://phbtcgleb6.execute-api.ap-northeast-1.amazonaws.com/default/savepicture" method="post" enctype="multipart/form-data" id="imgForm" target="sendPhoto">
-        <p>
-            <label for="upfile">
-            ファイルを選択してください
-            <input type="file" name="fileName" id="upfile" accept="image/*" capture="camera">
+        <p class="text-center">
+            <label for="upfile" class="btn btn-primary btn-lg">
+            ファイルを選択
+            <input type="file" name="fileName" id="upfile" accept="image/*" capture="camera" style="display: none">
         </label>
             <span style="color: #ff0000;" data-mce-style="color: #ff0000;"><div><img id="thumbnail" src=""></div></span>
         </p>
@@ -115,10 +88,43 @@
         </div>
         <p id="compUpload"></p>
     </form>
-    <a href="./index.html">アップロードを終了する</a>
+    
+    <div class="text-center">
+        <a href="./index.html" class="btn btn-secondary">アップロードを終了する</a>
+    </div>
     <iframe name="sendPhoto" style="width:0px;height:0px;border:0px;"></iframe>
     <script src="./js/md5.js" defer></script>
     <script src="js/photoreg.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    <footer>
+      <section id="footer">
+    		<div class="container">
+    			<div class="row text-center text-xs-center text-sm-left text-md-left">
+    				<div class="col-xs-12 col-sm-4 col-md-4">
+    					<h5 class = "goodfont">Quick links</h5>
+    					<ul class="list-unstyled quick-links">
+    						<li class="goodfont"><a href="">>>MyPage</a></li>
+    						<li class="goodfont"><a href="">>>About</a></li>
+    					</ul>
+    				</div>
+    			</div>
+    			<div class="row">
+    				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+    					<ul class="list-unstyled list-inline social text-center">
+    						<li class="list-inline-item"><a href=""><i class="fa fa-facebook"></i></a></li>
+    						<li class="list-inline-item"><a href=""><i class="fa fa-twitter"></i></a></li>
+    						<li class="list-inline-item"><a href=""><i class="fa fa-instagram"></i></a></li>
+    						<li class="list-inline-item"><a href=""><i class="fa fa-google-plus"></i></a></li>
+    						<li class="list-inline-item"><a href="" target="_blank"><i class="fa fa-envelope"></i></a></li>
+    					</ul>
+    				</div>
+    				<hr>
+    			</div>	
+    		</div>
+    	</section>
+    </footer>
 </body>
 
 </html>
