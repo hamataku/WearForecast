@@ -1,34 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Sign Up</title>
-    <script src="./js/jsbn.js"></script>
-    <script src="./js/jsbn2.js"></script>
-    <script src="./js/sjcl.js"></script>
-    <script src="./js/aws-sdk.min.js"></script>
-    <script src="./js/aws-cognito-sdk.min.js"></script>
-    <script src="./js/amazon-cognito-identity.min.js"></script>
-  </head>
-  <body>
-    <div id="signup">
-      <h1>Sign Up</h1>
-      <div id="message"><span id="message-span" style="color: red;"></span></div>
-      <form name="form-signup">
-        <span style="display: inline-block; width: 150px;">User ID(Email)</span>
-        <input type="text" id="email" placeholder="Email Address" />
-        <br />
-        <span style="display: inline-block; width: 150px;">Name</span>
-        <input type="text" id="name" placeholder="Name" />
-        <br />
-        <span style="display: inline-block; width: 150px;">Password</span>
-        <input type="password" id="password" placeholder="Password" />
-        <br /><br />
+
+<head>
+  <meta charset="UTF-8" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <title>Sign Up</title>
+  <script src="./js/jsbn.js"></script>
+  <script src="./js/jsbn2.js"></script>
+  <script src="./js/sjcl.js"></script>
+  <script src="./js/aws-sdk.min.js"></script>
+  <script src="./js/aws-cognito-sdk.min.js"></script>
+  <script src="./js/amazon-cognito-identity.min.js"></script>
+</head>
+
+<body>
+  <div id="signup">
+    <h1 class = "text-center mx-3">Sign Up</h1>
+    <div id="message"><span id="message-span" style="color: red;"></span></div>
+    <form name="form-signup" class = "text-center">
+      <span style="display: inline-block; width: 150px;">User ID(Email)</span>
+      <input type="text" id="email" placeholder="Email Address" />
+      <br />
+      <span style="display: inline-block; width: 150px;">Name</span>
+      <input type="text" id="name" placeholder="Name" />
+      <br />
+      <span style="display: inline-block; width: 150px;">Password</span>
+      <input type="password" id="password" placeholder="Password" />
+      <br /><br />
+      <div class = "text-center">
         <input type="button" id="createAccount" value="Create Account" />
-      </form>
+      </div>  
+    </form>
+  </div>
+  <br />
+  <div class="container">
+    <div class="row">
+      <div class="mx-auto">
+        <a href="./signin.html" class="btn btn-primary btn-lg">Sign In!</a>
+      </div>
     </div>
-    <br />
-    <a href="./signin.html">Sign In!</a>
-    <script src="./js/signup.js" defer></script>
-  </body>
+  </div>
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script src="./js/signup.js" defer></script>
+</body>
+
 </html>

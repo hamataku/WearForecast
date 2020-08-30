@@ -1,5 +1,6 @@
 let count = 0;
 let hash = "";
+
 (() => {
   $('#upbutton').hide();
   count = localStorage.getItem("キー");
@@ -86,7 +87,7 @@ $('#upfile').change(function() {
 
 // 画像をアップロード
 $('#imgForm').on('submit', function(e) {
-  $('#upbutton').hide();
+  //$('#upbutton').hide();
   // 要素を取得
   var elements = document.getElementsByName( "example" ) ;
 
