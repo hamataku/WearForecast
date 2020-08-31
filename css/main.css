@@ -5,6 +5,16 @@ body {
   background-image: url("../image/background2.jpg");
   background-size: cover;
   background-attachment: fixed;
+}
+
+
+main {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  color: #00BCD4;
+  background-color: rgba(228,252,255,0.9);;
+  border-top: solid 6px #eee;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
   opacity: 0.9;
 }
 
@@ -33,7 +43,6 @@ body {
   }
 
 .form-signin-heading {
-  color: white;
   text-align:center;
   margin-bottom: 30px;
 }
