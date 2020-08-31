@@ -33,12 +33,8 @@
           for (i = 0; i < result.length; i++) {
             currentUserData[result[i].getName()] = result[i].getValue();
           }
-          document.getElementById("name").innerHTML =
-              "ようこそ！" + currentUserData["name"] + "さん";
-          document.getElementById("role").innerHTML =
-              "Your Role is " + currentUserData["custom:custom:role"];
-          document.getElementById("email").innerHTML =
-              "Your E-Mail is " + currentUserData["email"];
+          document.getElementById("name").innerHTML = "Welcome！" + currentUserData["name"];
+          document.getElementById("email").innerHTML = "Your E-Mail is " + currentUserData["email"];
 
           // サインアウト処理
           const signoutButton = document.getElementById("signout");

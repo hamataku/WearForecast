@@ -111,3 +111,11 @@ nav li:hover{
 	margin-left:5px;
 	font-weight:700;
 }
+
+form p,form span {
+  font-size:30px;
+  color: black;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}

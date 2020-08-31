@@ -39,28 +39,27 @@
   <main>
     <div class="container wrapper">
     <hr class="colorgraph"><br>
-    <div id="menu" class="text-center mt-3">
-        <h1 id="name"></h1>
-        <h2 id="role"></h2>
-        <p id="email"></p>
+    <div id="menu" class="text-center mt-4">
+      <h1 id="name" class="goodfont"></h1><br>
+      <h5 id="email" class="goodfont"></h5><br>
     </div>
     <form name="myform" action="https://phbtcgleb6.execute-api.ap-northeast-1.amazonaws.com/default/savepicture" method="post" enctype="multipart/form-data" id="imgForm" target="sendPhoto">
-        <p class="text-center">
+        <p class="text-center ">
             <label for="upfile" class="btn btn-primary btn-lg">
             ファイルを選択
             <input type="file" name="fileName" id="upfile" accept="image/*" capture="camera" style="display: none">
         </label>
-            <span style="color: #ff0000;" data-mce-style="color: #ff0000;"><div><img id="thumbnail" src=""></div></span>
+            <span style="color: #ff0000;" data-mce-style="color: #ff0000;" class ="text-center"><div><img id="thumbnail" src="" style="width:30%;display: block;margin:auto;"></div></span>
         </p>
         <hr>
-        <div id="recognition">
-        <label onclick="actionA()">
+        <div id="recognition" class="text-center">
+        <label onclick="actionA()" class="btn btn-primary btn-lg">
             認識
         </label>
         </div>
-        <span id="mes"></span>
+        <p id="mes" class="text-center"></p>
 
-        <div id="upbutton1">
+        <div id="upbutton1" class="text-center">
         <p>1 冬服　<----> 5 夏服</p>
 
         <input type="radio" name="example" value="1" checked>1
@@ -71,7 +70,7 @@
 
         <hr>
         <p>
-            <label onclick="actionB()">
+            <label onclick="actionB()" class="btn btn-primary btn-lg">
             アップロード
             </label>
         </p>
@@ -84,7 +83,7 @@
 
             <hr>
             <p>
-                <label onclick="actionC()">
+                <label onclick="actionC()" class="btn btn-primary btn-lg">
                     アップロード
                 </label>
             </p>

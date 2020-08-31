@@ -39,7 +39,7 @@ function hexToBase64(str) {
                     for (i = 0; i < result.length; i++) {
                         currentUserData[result[i].getName()] = result[i].getValue();
                     }
-                    //document.getElementById("name").innerHTML ="ようこそ！" + currentUserData["name"] + "さん";
+                    document.getElementById("name").innerHTML =currentUserData["name"];
                     //document.getElementById("role").innerHTML ="Your Role is " + currentUserData["custom:custom:role"];
                     //document.getElementById("email").innerHTML ="Your E-Mail is " + currentUserData["email"];
 
@@ -113,6 +113,7 @@ function hexToBase64(str) {
                                         $("#tmp"+count).html(parseInt(d["tmp"], 10)+"°C");
                                         $("#wea"+count).html(d["weather"]);
                                         $("#view_time"+count).html(d["day"]);
+                                        $("#city").html(d["city"]);
 
                                         count++;
                                     }

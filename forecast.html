@@ -35,6 +35,9 @@
                 <li class="nav-item">
                     <a class="nav-link goodfont" href="#" id="signout">>>SignOut</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link goodfont" href="#" id="name"></a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -42,21 +45,21 @@
         <div class="container wrapper">
             <hr class="colorgraph"><br>
             <h1 class="goodfont title">WEAR Forecast</h1>
-            <h2 class="goodfont title">~ for 5 days ~</h2>
+            <h2 class="goodfont title">~ for 5 days in <span id="city"></span>~</h2>
             <div class="horizontal_scroll_wrap">
                 <ul class="scroll_lst">
                     <li class="scroll_item">
                         <a href="" class="scroll_item_inr">
                             <div class="scroll_item_thum">
-                                <img src="" id="00" class="alignnone size-medium wp-image-986" /><br>
-                                <img src="" id="01" class="alignnone size-medium wp-image-986" /><br>
-                                <img src="" id="02" class="alignnone size-medium wp-image-986" />
+                                <img src="image/loading.gif" id="00" class="alignnone size-medium wp-image-986" /><br>
+                                <img src="image/loading.gif" id="01" class="alignnone size-medium wp-image-986" /><br>
+                                <img src="image/loading.gif" id="02" class="alignnone size-medium wp-image-986" />
                             <div class="scroll_item_info">
                                 <h4 class="scroll_item_ttl" id="view_time0"></h4>
                                 <div class="weather-info">
-                                    <img src="" id="0i" class="weather-image"/>
+                                    <img src="image/loading.gif" id="0i" class="weather-image"/>
                                     <span class="weather" id="wea0"></span>
-                                    <span class="temperature" id="tmp0">気温</span>
+                                    <span class="temperature" id="tmp0"></span>
                                 </div>
                             </div>
                         </a>
@@ -64,16 +67,16 @@
                     <li class="scroll_item">
                         <a href="" class="scroll_item_inr">
                             <div class="scroll_item_thum">
-                                <img src="" id="10" class="alignnone size-medium wp-image-986" /><br>
-                                <img src="" id="11" class="alignnone size-medium wp-image-986" /><br>
-                                <img src="" id="12" class="alignnone size-medium wp-image-986" />
+                                <img src="image/loading.gif" id="10" class="alignnone size-medium wp-image-986" /><br>
+                                <img src="image/loading.gif" id="11" class="alignnone size-medium wp-image-986" /><br>
+                                <img src="image/loading.gif" id="12" class="alignnone size-medium wp-image-986" />
                             </div>
                             <div class="scroll_item_info">
-                                <h4 class="scroll_item_ttl" id="view_time1">日付</h4>
+                                <h4 class="scroll_item_ttl" id="view_time1"></h4>
                                 <div class="weather-info">
-                                    <img src="" id="1i" class="weather-image"/>
+                                    <img src="image/loading.gif" id="1i" class="weather-image"/>
                                     <span class="weather" id="wea1"></span>
-                                    <span class="temperature" id="tmp1">気温</span>
+                                    <span class="temperature" id="tmp1"></span>
                                 </div>
                             </div>
                         </a>
@@ -81,16 +84,16 @@
                     <li class="scroll_item">
                         <a href="" class="scroll_item_inr">
                             <div class="scroll_item_thum">
-                                <img src="" id="20" class="alignnone size-medium wp-image-986" /><br>
-                                <img src="" id="21" class="alignnone size-medium wp-image-986" /><br>
-                                <img src="" id="22" class="alignnone size-medium wp-image-986" />
+                                <img src="image/loading.gif" id="20" class="alignnone size-medium wp-image-986" /><br>
+                                <img src="image/loading.gif" id="21" class="alignnone size-medium wp-image-986" /><br>
+                                <img src="image/loading.gif" id="22" class="alignnone size-medium wp-image-986" />
                             </div>
                             <div class="scroll_item_info">
-                                <h4 class="scroll_item_ttl" id="view_time2">日付</h4>
+                                <h4 class="scroll_item_ttl" id="view_time2"></h4>
                                 <div class="weather-info">
-                                    <img src="" id="2i" class="weather-image"/>
+                                    <img src="image/loading.gif" id="2i" class="weather-image"/>
                                     <span class="weather" id="wea2"></span>
-                                    <span class="temperature" id="tmp2">気温</span>
+                                    <span class="temperature" id="tmp2"></span>
                                 </div>
                             </div>
                         </a>
@@ -98,16 +101,16 @@
                     <li class="scroll_item">
                         <a href="" class="scroll_item_inr">
                             <div class="scroll_item_thum">
-                                <img src="" id="30" class="alignnone size-medium wp-image-986" /><br>
-                                <img src="" id="31" class="alignnone size-medium wp-image-986" /><br>
-                                <img src="" id="32" class="alignnone size-medium wp-image-986" />
+                                <img src="image/loading.gif" id="30" class="alignnone size-medium wp-image-986" /><br>
+                                <img src="image/loading.gif" id="31" class="alignnone size-medium wp-image-986" /><br>
+                                <img src="image/loading.gif" id="32" class="alignnone size-medium wp-image-986" />
                             </div>
                             <div class="scroll_item_info">
-                                <h4 class="scroll_item_ttl" id="view_time3">日付</h4>
+                                <h4 class="scroll_item_ttl" id="view_time3"></h4>
                                 <div class="weather-info">
-                                    <img src="" id="3i" class="weather-image"/>
+                                    <img src="image/loading.gif" id="3i" class="weather-image"/>
                                     <span class="weather" id="wea3"></span>
-                                    <span class="temperature" id="tmp3">気温</span>
+                                    <span class="temperature" id="tmp3"></span>
                                 </div>
                             </div>
                         </a>
@@ -115,16 +118,16 @@
                     <li class="scroll_item">
                         <a href="" class="scroll_item_inr">
                             <div class="scroll_item_thum">
-                                <img src="" id="40" class="alignnone size-medium wp-image-986" /><br>
-                                <img src="" id="41" class="alignnone size-medium wp-image-986" /><br>
-                                <img src="" id="42" class="alignnone size-medium wp-image-986" />
+                                <img src="image/loading.gif" id="40" class="alignnone size-medium wp-image-986" /><br>
+                                <img src="image/loading.gif" id="41" class="alignnone size-medium wp-image-986" /><br>
+                                <img src="image/loading.gif" id="42" class="alignnone size-medium wp-image-986" />
                             </div>
                             <div class="scroll_item_info">
-                                <h4 class="scroll_item_ttl" id="view_time4">日付</h4>
+                                <h4 class="scroll_item_ttl" id="view_time4"></h4>
                                 <div class="weather-info">
-                                    <img src="" id="4i" class="weather-image"/>
+                                    <img src="image/loading.gif" id="4i" class="weather-image"/>
                                     <span class="weather" id="wea4"></span>
-                                    <span class="temperature" id="tmp4">気温</span>
+                                    <span class="temperature" id="tmp4"></span>
                                 </div>
                             </div>
                         </a>

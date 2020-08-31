@@ -6,7 +6,7 @@ $(function () {
     $('#upbutton1').hide();
     $('#upbutton2').hide();
     $('#recognition').hide();
-    if(typeof(localStorage.getItem("count")) != undefined){
+    if(localStorage.getItem("キー") == null){
         count = "0";
         localStorage.setItem("キー", "0");
     }else{
@@ -46,12 +46,7 @@ $(function () {
                     for (i = 0; i < result.length; i++) {
                         currentUserData[result[i].getName()] = result[i].getValue();
                     }
-                    document.getElementById("name").innerHTML =
-                        "ようこそ！" + currentUserData["name"] + "さん";
-                    document.getElementById("role").innerHTML =
-                        "Your Role is " + currentUserData["custom:custom:role"];
-                    document.getElementById("email").innerHTML =
-                        "Your E-Mail is " + currentUserData["email"];
+                    document.getElementById("name").innerHTML ="Welcome! "+currentUserData["name"]+"!";
 
                     hash = CybozuLabs.MD5.calc(currentUserData["email"]);
 
